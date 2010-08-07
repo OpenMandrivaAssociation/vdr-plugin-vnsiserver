@@ -3,7 +3,7 @@
 %define name	vdr-plugin-%plugin
 %define version	0.0.1
 %define snap	32585
-%define rel	1
+%define rel	2
 
 Summary:	VDR plugin: VDR-Network-Streaming-Interface (VNSI) Server
 Name:		%name
@@ -18,6 +18,7 @@ URL:		http://xbmc.org/
 # svn export -r $REV $URL vnsiserver-$REV
 # tar -cjf vdr-vnsiserver-$REV.tar.bz2 vnsiserver-$REV
 Source:		vdr-%plugin-%snap.tar.bz2
+Patch0:		vnsiserver-fix-crash.patch
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	vdr-devel >= 1.6.0
 Requires:	vdr-abi = %vdr_abi
@@ -27,6 +28,7 @@ A VNSI server for VDR, allowing the use of VDR via VNSI PVR addon of XBMC.
 
 %prep
 %setup -q -n %plugin-%snap
+%apply_patches
 %vdr_plugin_prep
 
 %build
