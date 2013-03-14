@@ -3,7 +3,7 @@
 %define name	vdr-plugin-%plugin
 %define version	0.0.1
 %define snap	32590
-%define rel	2
+%define rel	3
 
 Summary:	VDR plugin: VDR-Network-Streaming-Interface (VNSI) Server
 Name:		%name
@@ -41,12 +41,6 @@ install -m644 %{plugin}/* %{buildroot}%{vdr_plugin_cfgdir}/%{plugin}
 install -m755 -d %{buildroot}%{vdr_plugin_datadir}/%{plugin}
 mv %{buildroot}%{vdr_plugin_cfgdir}/%{plugin}/noSignal.mpg %{buildroot}%{vdr_plugin_datadir}/%{plugin}
 ln -s %{vdr_plugin_datadir}/%{plugin}/noSignal.mpg %{buildroot}%{vdr_plugin_cfgdir}/%{plugin}/noSignal.mpg
-
-%post
-%vdr_plugin_post %plugin
-
-%postun
-%vdr_plugin_postun %plugin
 
 %files -f %plugin.vdr
 %defattr(-,root,root)
