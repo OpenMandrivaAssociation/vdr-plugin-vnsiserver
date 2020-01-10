@@ -26,7 +26,7 @@ A VNSI server for VDR, allowing the use of VDR via VNSI PVR addon of XBMC.
 
 %prep
 %setup -q -n %plugin-%snap
-%apply_patches
+%autopatch -p1
 %vdr_plugin_prep
 
 %build
