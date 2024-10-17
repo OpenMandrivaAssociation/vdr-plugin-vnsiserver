@@ -11,7 +11,7 @@ Version:	%version
 Release:	0.svn%snap.%rel
 Group:		Video
 License:	GPLv2+
-URL:		http://xbmc.org/
+URL:		https://xbmc.org/
 
 # URL=https://xbmc.svn.sourceforge.net/svnroot/xbmc/branches/pvr-testing2/xbmc/pvrclients/vdr-vnsi/vdr-plugin-vnsiserver
 # REV=$(svn info $URL| sed -ne 's/^Last Changed Rev: //p')
